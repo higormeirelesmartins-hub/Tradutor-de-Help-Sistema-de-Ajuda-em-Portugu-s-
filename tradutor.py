@@ -1,4 +1,5 @@
 import argostranslate.translate
+
 import io
 import contextlib
 import time
