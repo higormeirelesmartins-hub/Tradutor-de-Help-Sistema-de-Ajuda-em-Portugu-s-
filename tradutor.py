@@ -49,3 +49,39 @@ def traduzir(texto):
 
 
 # fim da parte de traduçao
+#Rodamento do progrma
+
+def titulo(msg, cor=0):
+    tam = len(msg) + 4
+    print(c[cor],end='')
+    print('-' * tam)
+    print(f'{msg} ')
+    print('-' *tam)
+    print(c[0],end='')
+
+
+
+def aju (com):
+   titulo(f'Acessando o comando {com}',2)
+   print(c[4],end='')
+   bufer=io.StringIO()
+   with contextlib.redirect_stdout(bufer):
+       help(com)
+   texto_help=bufer.getvalue()
+   traduzido=traduzir(texto_help)
+   print(traduzido)
+   print(c[0],end='')
+   print('-'*40)
+
+
+
+
+ajuda=' '
+while True:
+        titulo('Sistema de ajuda : ',1)
+        ajuda=str(input('Funçao ou biblioteca :',))
+        if ajuda.upper()=='FIM':
+            break
+        else:
+         aju(ajuda)
+         print('-'*40)
